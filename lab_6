@@ -1,0 +1,158 @@
+#include <iostream>
+#include <cstring>
+#include <fstream>
+#include <cstdlib>
+#include <iomanip>
+#include <conio.h>
+#include <ctime>
+#include <list>
+using namespace std;
+
+
+//1
+class Person
+{
+   
+protected:
+	string title;
+	string givenName;
+	string middleName;
+	string familyName;
+	string birthDate;
+	string gender;
+	string phone;
+	string homeAddress;
+
+};
+class Staff : Person {
+protected:
+	string joined;
+	string education[10];
+	string certifications[10];
+	string languages[10];
+
+};
+class Departament {
+
+};
+//2
+class Hospital :Person {
+
+protected:
+	string id;
+	string address;
+	string phone;
+};
+class Patient: Person {
+protected:
+	 string id;
+	 string accepted;
+	 string sickness [10];
+	 string prescriptions[10];
+	 string allergies[10];
+	 string specialReqs[10];
+
+};
+//6
+class Doctor  {
+protected:
+    string specialty [10];
+    string locations [10];
+
+};
+//7
+class OptionalStaf : Staff {
+
+};
+//8
+class Nurse : OptionalStaf {
+
+};
+//9
+class Surgeon : Doctor {
+
+};
+//10
+class AdministrativeStaff: Staff {
+
+};
+//11
+class Front_Desck_Staff: AdministrativeStaff {
+
+};
+//12
+class Receptionist :Front_Desck_Staff {
+
+};
+//13
+class Tehnical_Staff :Staff  {
+
+};
+//14
+class Tehnician : Tehnical_Staff {
+
+};
+//15
+class Tehnologist :Tehnical_Staff {
+
+};
+//16
+class Surgical_Tehnologist :Tehnologist {
+
+};
+int main(void)
+{
+	Person pers;
+	Hospital hosp;
+	int n;//numarul de elemente
+
+	char com ;
+	do
+	{
+		cout <<"\n\n---------------Menu---------------\n";
+		cout <<" - 1 Introducere de date clasa persoana  \n";
+		cout <<" - 2 Introducere de date clasa pacient  \n";
+		cout <<" - 2 Introducere de date clasa spital \n";
+		cout <<" - 2 Introducere de date clasa staff  \n";
+		cout <<" - 2 Afisare date\n";
+		cout << " - Pentru a inchide aplicatia tastati 'q'\n";
+		cout << "\n\n Introduceti comanda: ";
+		cin >> com;
+		switch (com)
+		{
+		case '1':
+		{
+			cout << "\n\tIntroduceti numarul de elemente:";
+			cin >> n;
+			for (int i = 0; i < n; i++)//ciclu de citire/afisare a nr elemente de le tasta
+			{
+				pers.Citeste();
+				pers.Afisare();
+			}
+			break;
+		}
+		case '2':{
+		    cout << "\n\tIntroduceti numarul de elemente:";
+			cin >> n;
+		for (int i = 0; i < n; i++)//ciclu de citire/afisare a nr elemente de le tasta
+			{
+				hosp.Citeste();
+				hosp.Afisare();
+			}
+			break;
+		}
+
+		case 'q':
+		{
+			continue;
+		}
+		default:
+		{
+			cout << "\n\tComanda Inexistenta!";
+			break;
+		}
+		}
+	} while (com != 'q');
+	return  0;
+}
+

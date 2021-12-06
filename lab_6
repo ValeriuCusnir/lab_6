@@ -34,6 +34,7 @@ protected:
 };
 class Departament {
 
+
 };
 //2
 class Hospital :Person {
@@ -42,6 +43,7 @@ protected:
 	string id;
 	string address;
 	string phone;
+	string person;
 };
 class Patient: Person {
 protected:
@@ -102,57 +104,7 @@ class Surgical_Tehnologist :Tehnologist {
 };
 int main(void)
 {
-	Person pers;
-	Hospital hosp;
-	int n;//numarul de elemente
-
-	char com ;
-	do
-	{
-		cout <<"\n\n---------------Menu---------------\n";
-		cout <<" - 1 Introducere de date clasa persoana  \n";
-		cout <<" - 2 Introducere de date clasa pacient  \n";
-		cout <<" - 2 Introducere de date clasa spital \n";
-		cout <<" - 2 Introducere de date clasa staff  \n";
-		cout <<" - 2 Afisare date\n";
-		cout << " - Pentru a inchide aplicatia tastati 'q'\n";
-		cout << "\n\n Introduceti comanda: ";
-		cin >> com;
-		switch (com)
-		{
-		case '1':
-		{
-			cout << "\n\tIntroduceti numarul de elemente:";
-			cin >> n;
-			for (int i = 0; i < n; i++)//ciclu de citire/afisare a nr elemente de le tasta
-			{
-				pers.Citeste();
-				pers.Afisare();
-			}
-			break;
-		}
-		case '2':{
-		    cout << "\n\tIntroduceti numarul de elemente:";
-			cin >> n;
-		for (int i = 0; i < n; i++)//ciclu de citire/afisare a nr elemente de le tasta
-			{
-				hosp.Citeste();
-				hosp.Afisare();
-			}
-			break;
-		}
-
-		case 'q':
-		{
-			continue;
-		}
-		default:
-		{
-			cout << "\n\tComanda Inexistenta!";
-			break;
-		}
-		}
-	} while (com != 'q');
+	
 	return  0;
 }
 

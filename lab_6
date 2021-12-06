@@ -49,6 +49,8 @@ protected:
 
 
 class Patient: Person {
+
+ private: OperationsStaff* operationsstaff;
 protected:
    string id;
    string accepted;
@@ -77,7 +79,7 @@ class Nurse : OperationsStaff {
 
 };
 //9
-class Surgeon : Doctor {
+class Surgeon  {
 
 };
 //10

@@ -1,73 +1,79 @@
 #include <iostream>
-#include <cstring>
-#include <fstream>
-#include <cstdlib>
-#include <iomanip>
-#include <conio.h>
-#include <ctime>
-#include <list>
 using namespace std;
 
 
 //1
-class Person
+class Hospital;
+
+class Person : Hospital
 {
-   
 protected:
-	string title;
-	string givenName;
-	string middleName;
-	string familyName;
-	string birthDate;
-	string gender;
-	string phone;
-	string homeAddress;
+  string title;
+  string givenName;
+  string middleName;
+  string familyName;
+  string birthDate;
+  string gender;
+  string phone;
+  string homeAddress;
+  string Hospital;
 
 };
+
+class Hospital : Person {
+    private:
+         Departament* departament;
+
+protected:
+  string id;
+  string address;
+  string phone;
+  string Person;
+
+};
+
+class Departament {
+    private: Staff* staff;
+
+};
+
+
 class Staff : Person {
 protected:
-	string joined;
-	string education[10];
-	string certifications[10];
-	string languages[10];
+  string joined;
+  string education[10];
+  string certifications[10];
+  string languages[10];
 
 };
-class Departament {
 
 
-};
-//2
-class Hospital :Person {
-
-protected:
-	string id;
-	string address;
-	string phone;
-	string person;
-};
 class Patient: Person {
 protected:
-	 string id;
-	 string accepted;
-	 string sickness [10];
-	 string prescriptions[10];
-	 string allergies[10];
-	 string specialReqs[10];
+   string id;
+   string accepted;
+   string sickness [10];
+   string prescriptions[10];
+   string allergies[10];
+   string specialReqs[10];
+
 
 };
 //6
-class Doctor  {
+class OperationsStaff : Staff {
+
+};
+
+class Doctor : OperationsStaff  {
 protected:
-    string specialty [10];
-    string locations [10];
+    string specialty[10];
+    string locations[10];
 
 };
 //7
-class OptionalStaf : Staff {
 
-};
 //8
-class Nurse : OptionalStaf {
+class Nurse : OperationsStaff {
 
 };
 //9
@@ -87,7 +93,7 @@ class Receptionist :Front_Desck_Staff {
 
 };
 //13
-class Tehnical_Staff :Staff  {
+class Tehnical_Staff : Staff  {
 
 };
 //14
@@ -102,9 +108,8 @@ class Tehnologist :Tehnical_Staff {
 class Surgical_Tehnologist :Tehnologist {
 
 };
+
 int main(void)
 {
-	
-	return  0;
+  return  0;
 }
-
